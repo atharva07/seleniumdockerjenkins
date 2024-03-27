@@ -15,9 +15,21 @@ pipeline {
         }
 
         stage('Push Image') {
-            steps {
-                bat "docker push atharvahiwase7/flightreservationjenkins:latest"
+            environment {
+                DOCKER_HUB = credentials('dockerhub-cred')
             }
+            steps {
+                bat 'docker login -u %DOCKER_HUB_USR% -p %DOCKER_HUB_PSW%'
+                bat "docker push atharvahiwase7/flightreservationjenkins:latest"
+                bat "docker tag atharvahiwase7/flightreservationjenkins:latest atharvahiwase7/flightreservationjenkins:${env.BUILD_NUMBER}"
+                bat "docker push atharvahiwase7/flightreservationjenkins:${env.BUILD_NUMBER}"
+            }
+        }
+    }
+
+    post {
+        always {
+            bat "docker logout"
         }
     }
 }
