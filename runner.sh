@@ -36,7 +36,7 @@ echo "Selenium Grid is up and running. Running the test...."
 
 # Start the java command
 java -cp 'libs/*' \
-     -Dselenium.grid.enabled="${GRID}" \
+     -Dselenium.grid.enabled=true \
      -Dselenium.grid.hubHost="${HUB_HOST:-hub}" \
      -Dbrowser="${BROWSER:-chrome}" \
      org.testng.TestNG \

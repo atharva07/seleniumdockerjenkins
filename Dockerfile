@@ -17,6 +17,11 @@ ADD runner.sh      runner.sh
 # 3. Once the container is build and ready. hit the command in the location where docker yaml file is stored. - docker-compose up
 # 4. check the results in the output file which we created using volume mapping method.
 
+# Creating image by using CI/CD pipeline - Jenkins
+# 1. After making changes in the code we have to first push the code into Git repo. 
+# 2. Then Re-run the job selenium docker builder, we have to push latest image into docker hub.
+# 3. Then run another job selenium docker runner to execute the test cases by using latest image.
+
 # Test results are inside the container
 # We can get the test results to the machine by doing volume mapping
 
