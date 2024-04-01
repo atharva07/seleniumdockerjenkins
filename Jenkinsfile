@@ -10,7 +10,7 @@ pipeline {
 
         stage('Build Image') {
             steps {
-                bat "docker build -t=atharvahiwase7/flightreservation:latest ."
+                bat "docker build -t=atharvahiwase7/flightreservation ."
             }
         }
 
