@@ -1,3 +1,14 @@
+#!/bin/bash
+
+#-------------------------------------------------------------------
+#  This script expects the following environment variables
+#     HUB_HOST
+#     BROWSER
+#     THREAD_COUNT
+#     TEST_SUITE
+#-------------------------------------------------------------------
+
+# Let's print what we have received
 echo "-------------------------------------------"
 echo "HUB_HOST      : ${HUB_HOST:-hub}"
 echo "BROWSER       : ${BROWSER:-chrome}"
