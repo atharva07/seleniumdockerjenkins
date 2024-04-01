@@ -4,7 +4,7 @@ FROM bellsoft/liberica-openjdk-alpine:17-cds-x86_64
 RUN apk add curl jq
 
 # workspace
-WORKDIR /home/flightreservation
+WORKDIR /home/dockerseleniumjenkins
 
 # we can add the required file to run the test
 ADD target/docker-resources ./
